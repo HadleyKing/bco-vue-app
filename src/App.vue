@@ -1,19 +1,40 @@
+// App.vue 
+
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <img alt="BCO logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your BCO-Vue-App"/>
+    <h1>BioCompute Object</h1>
+    <button v-on:click="getBCO">Show BioCompute Object</button>
+    <biocompute :bco="bco" />
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import HelloWorld from './components/HelloWorld.vue'
+  import Biocompute from './components/Biocompute.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    Biocompute,
+  },
+  data() {
+    return {
+      bco: {}
+    };
+  },
+  methods: {
+    getBCO() {
+      fetch("data.json")
+        .then(response => response.json())
+        .then(data => (this.bco = data));
+    }
   }
-}
+};
 </script>
 
 <style>
