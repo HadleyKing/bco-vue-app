@@ -1,17 +1,17 @@
 // Biocompute.vue
 
 <template>
-  <div>
+  <div id="biocompute">
     <div v-show="bco" class="bco-stats">
-      <thread class="domain">Top Level</thread>
+      <th class="domain">Top Level</th>
       <tr>
-          <td>BioCompute ID:</td><td>{{ bco.bco_id }}</td>
+          <td>BioCompute ID:</td><td>{{ bco.object_id }}</td>
       </tr>
       <tr>
-          <td>E-Tag</td><td>{{bco.checksum}}</td>
+          <td>E-Tag</td><td>{{bco.etag}}</td>
       </tr>
       <tr>
-        <td>Spec Version</td><td>{{bco.bco_spec_version}}</td>
+        <td>Spec Version</td><td>{{bco.spec_version}}</td>
       </tr>
     </div>
   </div>

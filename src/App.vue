@@ -7,20 +7,27 @@
     <h1>BioCompute Object</h1>
     <button v-on:click="getBCO">Show BioCompute Object</button>
     <biocompute :bco="bco" />
-
+    <provenance :bco="bco" />
+    <usability :bco="bco" />
+    <parametric :bco="bco" />
   </div>
 </template>
 
 <script>
   import HelloWorld from './components/HelloWorld.vue'
   import Biocompute from './components/Biocompute.vue'
-
+  import Provenance from './components/Provenance.vue'
+  import Usability from './components/Usability.vue'
+  import Parametric from './components/Parametric.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
     Biocompute,
+    Provenance,
+    Usability,
+    Parametric,
   },
   data() {
     return {

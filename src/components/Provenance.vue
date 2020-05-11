@@ -1,17 +1,35 @@
 // Provenance.vue
 
 <template>
-  <div>
+  <div id ="provenance">
     <div v-show="bco" class="bco-stats">
-      <thread class="domain">Top Level</thread>
+      <th class="domain">Provenance Domain</th>
       <tr>
-          <td>BioCompute ID:</td><td>{{bco.bco_id}}</td>
+        <td>Name</td><td>{{bco.provenance_domain.name}}</td>
       </tr>
       <tr>
-          <td>E-Tag</td><td>{{bco.checksum}}</td>
+        <td>Version</td><td>{{bco.provenance_domain.version}}</td>
       </tr>
       <tr>
-        <td>Spec Version</td><td>{{bco.bco_spec_version}}</td>
+        <td>Review</td><td>{{bco.provenance_domain.review}}</td>
+      </tr>
+      <tr>
+        <td>Obsolete</td><td>{{bco.provenance_domain.obsolete_after}}</td>
+      </tr>
+      <tr>
+        <td>Embargo</td><td>{{bco.provenance_domain.embargo}}</td>
+      </tr>
+      <tr>
+        <td>Created:</td><td>{{bco.provenance_domain.created}}</td>
+      </tr>
+      <tr>
+        <td>Modified</td><td>{{bco.provenance_domain.modified}}</td>
+      </tr>
+      <tr>
+        <td>Contributors</td><td>{{bco.provenance_domain.contributors}}</td>
+      </tr>
+      <tr>
+        <td>License</td><td>{{bco.provenance_domain.license}}</td>
       </tr>
     </div>
   </div>
@@ -19,7 +37,8 @@
 
 <script>
 export default {
-  name: 'biocompute',
+  name: 'provenance',
+  props: ['bco'],
 }
 </script>
 
