@@ -3,21 +3,23 @@
 <template>
   <div id ="provenance">
     <div v-show="bco" class="bco-stats">
-      <th class="domain">Provenance Domain</th>
+      <h2 class="domain">Provenance Domain</h2>
       <tr>
-        <td>Name</td><td>{{bco.provenance_domain.name}}</td>
+        <td>Name</td>
+        <td>{{bco.provenance_domain.name}}</td>
+        <td><button @click="editMode(bco.provenance_domain.name)">Edit</button></td>
       </tr>
       <tr>
-        <td>Version</td><td>{{bco.provenance_domain.version}}</td>
+        <td>Version</td><td>{{bco.provenance_domain.version}}</td><td><button>Edit</button></td>
       </tr>
       <tr>
-        <td>Review</td><td>{{bco.provenance_domain.review}}</td>
+        <td>Review</td><td>{{bco.provenance_domain.review}}</td><td><button>Add</button><br><button>Remove</button></td>
       </tr>
       <tr>
-        <td>Obsolete</td><td>{{bco.provenance_domain.obsolete_after}}</td>
+        <td>Obsolete</td><td>{{bco.provenance_domain.obsolete_after}}</td><td><button>Edit</button></td>
       </tr>
       <tr>
-        <td>Embargo</td><td>{{bco.provenance_domain.embargo}}</td>
+        <td>Embargo</td><td>{{bco.provenance_domain.embargo.start_time}}<br>{{bco.provenance_domain.embargo.end_time}}</td>
       </tr>
       <tr>
         <td>Created:</td><td>{{bco.provenance_domain.created}}</td>
@@ -26,10 +28,10 @@
         <td>Modified</td><td>{{bco.provenance_domain.modified}}</td>
       </tr>
       <tr>
-        <td>Contributors</td><td>{{bco.provenance_domain.contributors}}</td>
+        <td>Contributors</td><td>{{bco.provenance_domain.contributors}}</td><td><button>Add</button></td>
       </tr>
       <tr>
-        <td>License</td><td>{{bco.provenance_domain.license}}</td>
+        <td>License</td><td>{{bco.provenance_domain.license}}</td><td><button>Edit</button></td>
       </tr>
     </div>
   </div>
@@ -39,7 +41,8 @@
 export default {
   name: 'provenance',
   props: ['bco'],
-}
+};
+
 </script>
 
 <style>
